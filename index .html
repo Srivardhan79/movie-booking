@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Ticket Booking</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <h1>🎬 Movie Ticket Booking</h1>
+    <h2 class="movie-heading">NOW SHOWING</h2>
+    <div class="movie-container">
+        <div class="movie-card">
+            <img src="./doomsday.jpeg" alt="Doomsday">
+            <h3>Doomsday</h3>
+            <p>Action | Sci-Fi</p>
+            <h4>₹200</h4>
+            <button onclick="selectMovie(200, 'Doomsday')">
+                Book Now
+            </button>
+        </div>
+        <div class="movie-card">
+            <img src="./one piece.png" alt="One Piece">
+            <h3>One Piece God Valley</h3>
+            <p>Anime | Adventure</p>
+            <h4>₹180</h4>
+            <button onclick="selectMovie(180, 'One Piece')">
+                Book Now
+            </button>
+        </div>
+        <div class="movie-card">
+            <img src="./batman.jpg" alt="Batman">
+            <h3>Batman</h3>
+            <p>Action | Crime</p>
+            <h4>₹220</h4>
+            <button onclick="selectMovie(220, 'Batman')">
+                Book Now
+            </button>
+        </div>
+    </div>
+    <div class="container" id="bookingFormSection">
+        <h2>Book Your Tickets</h2>
+        <form id="bookingForm">
+            <select id="movie" required>
+                <option value="0">Select the movie you want</option>
+                <option value="200">Doomsday - ₹200</option>
+                <option value="180">One Piece - ₹180</option>
+                <option value="220">Batman - ₹220</option>
+            </select>
+            <br>
+            <select id="time" required>
+                <option value="10 AM">10 AM</option>
+                <option value="2 PM">2 PM</option>
+                <option value="6 PM">6 PM</option>
+                <option value="9 PM">9 PM</option>
+            </select>
+            <br>
+            <input
+                type="number"
+                id="quantity"
+                placeholder="Number of tickets"
+                min="1"
+                step="1"
+                required>
+            <br>
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter your email"
+                required>
+            <h3>Total Price: ₹<span id="total">200</span></h3>
+            <button type="submit">Confirm Booking</button>
+            <button type="reset">Reset</button>
+        </form>
+        <p id="message"></p>
+        <h2>My Bookings</h2>
+        <input
+            type="text"
+            id="search"
+            placeholder="Search by movie name">
+        <h3>Booking Count: <span id="count">0</span></h3>
+        <div id="bookings"></div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
